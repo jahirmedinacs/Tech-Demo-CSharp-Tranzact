@@ -1,125 +1,20 @@
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
+// Importing the System.IO namespace which contains types that allow reading and writing to files and data streams
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using NUnit.Framework;
-using OpenQA.Selenium.DevTools.V122.Schema;
 
-
+// Defining the namespace for the class. This groups related types into namespaces so that they can be organized and referenced easily
 namespace TranzactDemo.Common
 {
+    // The Utilities class is a public class, meaning it can be accessed from any other class
     public class Utilities
     {
-        public static readonly string REGEX = "[^a-zA-Z0-9]+";
-
-        public string Format(string str, params object[] args)
-        {
-            return string.Format(str, args);
-        }
-
+        // This is a public method that returns a string. It can be accessed from any class
         public string RandomAlphanumeric(int length)
         {
+            // Path.GetRandomFileName() generates a random 11-character string that can be used as a file name
+            // The Replace(".", "") removes any periods from the string
+            // The Substring(0, length) returns the first 'length' characters of the string
+            // So, this method returns a random alphanumeric string of the specified length
             return Path.GetRandomFileName().Replace(".", "").Substring(0, length);
-        }
-
-        public int RandomInt(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max + 1);
-        }
-
-        public int RandomIndex(int size)
-        {
-            Random random = new Random();
-            return random.Next(0, size - 1);
-        }
-
-        public void CaptureScreenshot(IWebDriver driver)
-        {
-            try
-            {
-                var date = DateTime.Now.ToString("yyyy_MMM_dd_HH_mm_ss");
-                var title = driver.Title.Replace("|", "-");
-                var nameFile = Format("Screenshot_{0}_{1}", title, date);
-                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                screenshot.SaveAsFile($"./screenshots/{nameFile}.png");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Failed to capture screenshot: {e.Message}");
-            }
-        }
-
-        public void AllureCaptureScreenshotRe(IWebDriver driver)
-        {
-            try
-            {
-                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                TestContext.AddTestAttachment(screenshot.AsByteArray.ToString(), "screenshot.png");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
-        public DateTime GetParsedAndFormattedDateWithYear(string date)
-        {
-            try
-            {
-                return DateTime.ParseExact(date, "dd MMM yyyy", null);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message, e);
-            }
-        }
-
-        public DateTime GetParsedAndFormattedDateWithCommaAndYear(string date)
-        {
-            try
-            {
-                return DateTime.ParseExact(date, "dd MMM, yyyy", null);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message, e);
-            }
-        }
-
-        public DateTime GetParsedAndFormattedDate(string date)
-        {
-            try
-            {
-                return DateTime.ParseExact(date, "dd MMM", null);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message, e);
-            }
-        }
-
-        public bool IsInAlphabeticalOrder(List<string> list)
-        {
-            var previous = string.Empty;
-            var tmpList = list.Select(e => e.Trim().Substring(0, 1).ToLower()).ToList();
-
-            foreach (var current in tmpList)
-            {
-                if (string.Compare(current, previous, StringComparison.Ordinal) < 0)
-                    return false;
-                previous = current;
-            }
-            return true;
-        }
-
-        public int GetElementLocation(IWebElement element)
-        {
-            var elementRect = element.Location;
-            return elementRect.Y;
         }
     }
 }
-

@@ -1,31 +1,44 @@
+// Importing necessary namespaces for Selenium WebDriver, interactions, waits, and NUnit Framework
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+
 using NUnit.Framework;
 
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-
-
+// Defining the namespace for the class
 namespace TranzactDemo.PageObjects
 {
+    // BasePage class which all other PageObject classes will inherit from
     public class BasePage
     {
+        // Protected variables for WebDriver and WebDriverWait that can be accessed by child classes
         protected IWebDriver Driver;
-
         protected readonly WebDriverWait Wait;
 
+        // Private variable to track the current page
         private string _currentPage;
 
+        // Constructor for the class. It takes WebDriver as a parameter and initializes WebDriver and WebDriverWait
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
-            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
+            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90)); // Set the default wait time to 90 seconds
         }
+
+        // The rest of the methods in this class are common methods that can be used by any page. 
+        // These methods use the WebDriver instance to interact with the web page and make assertions.
+        // Each method takes a By locator as a parameter, which specifies the web element to interact with.
+        // Some methods also take additional parameters, such as a string for entering text.
+        // WebDriverWait is used to wait for certain conditions before interacting with web elements, 
+        // such as waiting for an element to be visible or clickable.
+        // Some methods return a value, such as a string or a list of strings, or a boolean.
+        // Other methods, such as Click, do not return a value and simply perform an action.
 
         public void ClearText(By element)
         {
@@ -94,11 +107,6 @@ namespace TranzactDemo.PageObjects
             executor.ExecuteScript("arguments[0].click();", webElement);
         }
 
-        public void AssertEquals(string elementActual, string txtError)
-        {
-            Assert.AreEqual(elementActual, txtError);
-        }
-
         public bool ElementExists(By locator)
         {
             return Driver.FindElements(locator).Count > 0;
@@ -132,14 +140,6 @@ namespace TranzactDemo.PageObjects
         public bool IsDisplayed(By locator)
         {
             return !IsNotDisplayed(locator);
-        }
-
-        public void Click(string xpath)
-        {
-            By locator = By.XPath(xpath);
-            WaitWebElementVisibleBy(locator);
-            WaitWebElementClickableBy(locator);
-            Driver.FindElement(locator).Click();
         }
 
         public void MouseOver(By element)

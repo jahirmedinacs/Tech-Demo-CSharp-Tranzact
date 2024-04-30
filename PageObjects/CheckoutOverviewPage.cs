@@ -1,44 +1,53 @@
 using OpenQA.Selenium;
-using TranzactDemo.Common;
 using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace TranzactDemo.PageObjects
 {
+    // This class represents the Checkout Overview page within our application.
+    // It inherits from the BasePage, which contains common methods and properties shared across different page objects.
     public class CheckoutOverviewPage : BasePage
     {
+        // XPath to locate the finish button on the page. This will be used to complete the checkout process.
         private readonly By _finishButton = By.XPath("//button[@id='finish']");
+        
+        // XPath to locate the thank you message on the page. This will be used to assert the successful completion of the checkout process.
         private readonly By _thankYouMessage = By.XPath("//h2[@class='complete-header'][normalize-space()]");
+        
+        // XPath to locate the item total value on the page. This will be used to verify the total price of the items in the cart.
         private readonly By _itemTotalValue = By.XPath("//div[@class='summary_subtotal_label'][normalize-space()]");
 
-        private readonly Utilities _util = new Utilities();
-
+        // Constructor to initialize the driver from the BasePage.
         public CheckoutOverviewPage(IWebDriver driver) : base(driver)
         {
         }
 
+        // Method to click the finish button on the checkout overview page.
+        // This method will be used whenever we need to complete the checkout process in our tests.
         public void ClickOnFinishOnCheckoutOverviewPage()
         {
             Click(_finishButton);
             WaitForPageToBeLoaded();
-            _util.AllureCaptureScreenshotRe(Driver);
         }
 
+        // Method to capture a message from the checkout complete page and assert it against the expected message.
+        // This method will be used to verify the successful completion of the checkout process in our tests.
         public void CaptureAMessageFromCheckoutCompletePage(string message)
         {
             string actualMessage = GetText(_thankYouMessage);
             AssertElementPresent(_thankYouMessage);
             Assert.AreEqual(actualMessage, message);
-            _util.AllureCaptureScreenshotRe(Driver);
         }
 
+        // Method to verify the item total is the same as the first product price captured.
+        // This method will be used to verify the total price of the items in the cart in our tests.
         public void VerifyItemTotalIsSameFirstProductPriceCaptured(List<string> productPrices)
         {
             string totalValue = GetText(_itemTotalValue);
             string[] totalValueSplit = totalValue.Split("total: ");
             string itemTotal = totalValueSplit[1];
             Assert.AreEqual(productPrices[0], itemTotal);
-            _util.AllureCaptureScreenshotRe(Driver);
         }
     }
 }
+

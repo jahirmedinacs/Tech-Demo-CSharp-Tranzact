@@ -1,32 +1,48 @@
-using Allure.NUnit;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using System.Collections.Generic;
-using TechTalk.SpecFlow;
-using TranzactDemo.PageObjects;
-using TranzactDemo.Common;
-using Assert = NUnit.Framework.Assert;
+// Importing necessary namespaces for test automation, NUnit framework, and Selenium WebDriver
+using Allure.NUnit; // Used for Allure integration with NUnit for better reporting
+using NUnit.Framework; // NUnit framework for assertions
+using OpenQA.Selenium; // Selenium WebDriver for browser automation
+using System.Collections.Generic; // System class for handling collections
+using TechTalk.SpecFlow; // SpecFlow for Behavior Driven Development (BDD)
 
+using Assert = NUnit.Framework.Assert; // Creating an alias for NUnit.Framework.Assert as Assert
+
+using TranzactDemo.PageObjects; // Importing Page Objects for the application under test
+using TranzactDemo.Common; // Importing Common utilities that can be used across the application
+
+// Defining the namespace for the class
 namespace TranzactDemo.StepDefinitions
 {
+    // The class is decorated with [Binding], [TestFixture], and [AllureNUnit] attributes
+    // [Binding] - SpecFlow attribute to denote that this class contains binding methods (Given, When, Then)
+    // [TestFixture] - NUnit attribute to denote that this class contains test cases
+    // [AllureNUnit] - Allure attribute to enable Allure reporting for NUnit
     [Binding, TestFixture, AllureNUnit]
     public class MultiScenarioFeatureSteps
     {
+        // Private variables to hold instances of WebDriver, Page Objects, and Utilities
         private readonly IWebDriver _driver;
-        
         private readonly Utilities _util = new Utilities();
         
+        // Page Object instances for different pages in the application
         private readonly LoginPage _login;
         private readonly GeneralPage _generalPage;
         private readonly InventoryPage _inventory;
-        private List<string> _productPrices = new List<string>();
         private readonly CartPage _cart;
-        private List<string> _cartPrices = new List<string>();
         private readonly CheckoutPage _checkout;
         private readonly CheckoutOverviewPage _checkoutOverview;
         
+        // Lists to hold product and cart prices for comparison in tests
+        private List<string> _cartPrices = new List<string>();
+        private List<string> _productPrices = new List<string>();
+        
+        // Constructor for the class. It takes ScenarioContext as a parameter and initializes WebDriver and Page Objects
         public MultiScenarioFeatureSteps(ScenarioContext scenarioContext)
-        {
+        {   
+            // Getting WebDriver instance from ScenarioContext
+            // that has been initialized in the Hooks file
+            // this is a way to share the WebDriver instance across different steps 
+            // but is feature / functionality related to SpecFlow.
             _driver = scenarioContext["WEBDRIVER"] as IWebDriver;
             
             _login = new LoginPage(_driver);
@@ -35,12 +51,15 @@ namespace TranzactDemo.StepDefinitions
             _cart = new CartPage(_driver);
             _checkout = new CheckoutPage(_driver);
             _checkoutOverview = new CheckoutOverviewPage(_driver);
-            
         }
+        
+        // The rest of the methods in the class are SpecFlow step definitions. Each method corresponds to a step in the Gherkin feature file
+        // The [Given], [When], and [Then] attributes denote the type of the step (Given, When, Then)
+        // The methods use the Page Object instances to perform actions on the application and make assertions
         
         [Given("I am on the SauceDemo login page")]
         public void IAmOnTheSauceDemoLoginPage()
-        {
+        { 
             _login.LoadLoginPage();
         }
         
