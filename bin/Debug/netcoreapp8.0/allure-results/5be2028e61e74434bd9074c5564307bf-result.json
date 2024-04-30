@@ -1,0 +1,111 @@
+{
+  "uuid": "509fe14c171c46618205f4da678cbe20",
+  "historyId": "Login with multiple sets of credentials764449652",
+  "fullName": "Login with multiple sets of credentials",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-AB"
+    }
+  ],
+  "links": [],
+  "name": "Login with multiple sets of credentials",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the SauceDemo login page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458998168,
+      "stop": 1714458999717
+    },
+    {
+      "name": "When  I enter Username as \"invalid_user\" and Password as \"secret_sauce\"",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458999717,
+      "stop": 1714459000246
+    },
+    {
+      "name": "Then  I click on the Login button",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714459000246,
+      "stop": 1714459000482
+    },
+    {
+      "name": "Then  I should see error message indicating invalid credentials",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714459000482,
+      "stop": 1714459000609
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "username",
+      "value": "\"invalid_user\""
+    },
+    {
+      "name": "password",
+      "value": "\"secret_sauce\""
+    },
+    {
+      "name": "expected_result",
+      "value": "error message indicating invalid credentials"
+    }
+  ],
+  "start": 1714458998167,
+  "stop": 1714459000609
+}

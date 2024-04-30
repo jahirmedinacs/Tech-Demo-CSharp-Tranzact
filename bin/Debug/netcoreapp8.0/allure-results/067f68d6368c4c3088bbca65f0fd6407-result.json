@@ -1,0 +1,174 @@
+{
+  "uuid": "4ee2646320ac48b79399e9ac3c7e0d3b",
+  "historyId": "Happy Path Workflow",
+  "fullName": "Happy Path Workflow",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-C"
+    }
+  ],
+  "links": [],
+  "name": "Happy Path Workflow",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "No matching step definition found for the step"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I login to the SauceDemo website with valid credentials",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229389,
+      "stop": 1714446229432
+    },
+    {
+      "name": "When  I add Sauce Labs Bike Light to the cart from the Products page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229432,
+      "stop": 1714446229450
+    },
+    {
+      "name": "Then  I click on the cart icon on Products Page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229451,
+      "stop": 1714446229479
+    },
+    {
+      "name": "When  I click on Checkout on the Cart page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229479,
+      "stop": 1714446229515
+    },
+    {
+      "name": "Then  I fill the checkout information with random data",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229515,
+      "stop": 1714446229535
+    },
+    {
+      "name": "Then  I click on continue button on checkout page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229535,
+      "stop": 1714446229555
+    },
+    {
+      "name": "Then  I click on Finish on checkout overview page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229556,
+      "stop": 1714446229576
+    },
+    {
+      "name": "Then  I click on menu icon on top left of the header",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229576,
+      "stop": 1714446229603
+    },
+    {
+      "name": "And  I click on Logout button on the displayed menu",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446229604,
+      "stop": 1714446229622
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714446229388,
+  "stop": 1714446229810
+}

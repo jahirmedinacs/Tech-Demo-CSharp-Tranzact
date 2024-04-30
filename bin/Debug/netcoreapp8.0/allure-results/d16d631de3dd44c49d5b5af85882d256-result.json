@@ -1,0 +1,103 @@
+{
+  "uuid": "5afc20499d384be38d55de7ce4687476",
+  "historyId": "Successful Login with Valid Credentials",
+  "fullName": "Successful Login with Valid Credentials",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-A"
+    }
+  ],
+  "links": [],
+  "name": "Successful Login with Valid Credentials",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "No matching step definition found for the step"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the SauceDemo login page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714454073055,
+      "stop": 1714454074455
+    },
+    {
+      "name": "When  I enter Username as \"standard_user\" and Password as \"secret_sauce\"",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714454074472,
+      "stop": 1714454074617
+    },
+    {
+      "name": "Then  I click on the Login button",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714454074618,
+      "stop": 1714454074619
+    },
+    {
+      "name": "Then  I should be redirected to the home page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714454074623,
+      "stop": 1714454074644
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714454073043,
+  "stop": 1714454074728
+}

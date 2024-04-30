@@ -1,0 +1,178 @@
+{
+  "uuid": "8a50874f99184f6fa04c03e4b85e5bec",
+  "historyId": "Happy Path Workflow",
+  "fullName": "Happy Path Workflow",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-C"
+    },
+    {
+      "name": "tag",
+      "value": "Demo"
+    }
+  ],
+  "links": [],
+  "name": "Happy Path Workflow",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "No matching step definition found for the step"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I login to the SauceDemo website with valid credentials",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456495038,
+      "stop": 1714456507106
+    },
+    {
+      "name": "When  I add Sauce Labs Bike Light to the cart from the Products page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507108,
+      "stop": 1714456507327
+    },
+    {
+      "name": "Then  I click on the cart icon on Products Page",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507329,
+      "stop": 1714456507330
+    },
+    {
+      "name": "When  I click on Checkout on the Cart page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507333,
+      "stop": 1714456507351
+    },
+    {
+      "name": "Then  I fill the checkout information with random data",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507351,
+      "stop": 1714456507351
+    },
+    {
+      "name": "Then  I click on continue button on checkout page",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507351,
+      "stop": 1714456507352
+    },
+    {
+      "name": "Then  I click on Finish on checkout overview page",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507352,
+      "stop": 1714456507352
+    },
+    {
+      "name": "Then  I click on menu icon on top left of the header",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507352,
+      "stop": 1714456507352
+    },
+    {
+      "name": "Then  I click on Logout button on the displayed menu",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714456507352,
+      "stop": 1714456507370
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714456494873,
+  "stop": 1714456507525
+}

@@ -1,0 +1,54 @@
+{
+  "uuid": "08c875c7cd104509af37e37438d5fb18",
+  "historyId": "Load Google Homepage",
+  "fullName": "Load Google Homepage",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "GoogleSearch"
+    },
+    {
+      "name": "tag",
+      "value": "GoogleDemo"
+    }
+  ],
+  "links": [],
+  "name": "Load Google Homepage",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "No matching step definition found for the step"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the Google homepage",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446087770,
+      "stop": 1714446087878
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714446087752,
+  "stop": 1714446087949
+}

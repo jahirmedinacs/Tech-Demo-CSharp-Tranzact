@@ -1,0 +1,55 @@
+{
+  "uuid": "4e2caf5fcde746ea8945dcaefdf5b480",
+  "historyId": "Load Google Homepage",
+  "fullName": "Load Google Homepage",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "GoogleSearch"
+    },
+    {
+      "name": "tag",
+      "value": "GoogleDemo"
+    }
+  ],
+  "links": [],
+  "name": "Load Google Homepage",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Exception has been thrown by the target of an invocation. -> The given key 'WEBDRIVER' was not present in the dictionary.",
+    "trace": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\n ---> System.Collections.Generic.KeyNotFoundException: The given key 'WEBDRIVER' was not present in the dictionary.\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\n   at TranzactDemo.StepDefinitions.GoogleSearchSteps..ctor(ScenarioContext scenarioContext) in /Users/jahirmedinacs/Documents/repos/C-Tech-Demo---Tranzact/StepDefinitions/GoogleSearchSteps.cs:line 18\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)\n   --- End of inner exception stack trace ---\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n   at BoDi.ObjectContainer.CreateObject(Type type, ResolutionList resolutionPath, RegistrationKey keyToResolve)\n   at BoDi.ObjectContainer.TypeRegistration.<>c__DisplayClass3_0.<ResolvePerContext>b__1()\n   at BoDi.ObjectContainer.RegistrationWithStrategy.ExecuteWithLock(Object lockObject, Func`1 getter, Func`1 factory, ResolutionList resolutionPath)\n   at BoDi.ObjectContainer.TypeRegistration.ResolvePerContext(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)\n   at BoDi.ObjectContainer.RegistrationWithStrategy.Resolve(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)\n   at BoDi.ObjectContainer.ResolveObject(RegistrationKey keyToResolve, ResolutionList resolutionPath)\n   at BoDi.ObjectContainer.Resolve(Type typeToResolve, ResolutionList resolutionPath, String name)\n   at BoDi.ObjectContainer.Resolve(Type typeToResolve, String name)\n   at TechTalk.SpecFlow.Infrastructure.TestObjectResolver.ResolveBindingInstance(Type bindingType, IObjectContainer container)\n   at lambda_method22(Closure, IContextManager)\n   at InvokeStub_Action`1.Invoke(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)\n   at Allure.SpecFlowPlugin.AllureBindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)\n   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)\n   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the Google homepage",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446632457,
+      "stop": 1714446632506
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714446632444,
+  "stop": 1714446632522
+}

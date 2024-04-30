@@ -1,0 +1,112 @@
+{
+  "uuid": "67a4ddf299654c1383fd854d9aecddf9",
+  "historyId": "Login with multiple sets of credentials-410026743",
+  "fullName": "Login with multiple sets of credentials",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-AB"
+    }
+  ],
+  "links": [],
+  "name": "Login with multiple sets of credentials",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "No matching step definition found for the step"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the SauceDemo login page",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446232656,
+      "stop": 1714446232676
+    },
+    {
+      "name": "When  I enter Username as \"\"standard_user\"\" and Password as \"\"secret_sauce\"\"",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446232677,
+      "stop": 1714446232691
+    },
+    {
+      "name": "And  I click on the Login button",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446232691,
+      "stop": 1714446232716
+    },
+    {
+      "name": "Then  I should see \"\"redirected to the home page\"\"",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714446232716,
+      "stop": 1714446232725
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "username",
+      "value": "\"standard_user\""
+    },
+    {
+      "name": "password",
+      "value": "\"secret_sauce\""
+    },
+    {
+      "name": "expected_result",
+      "value": "\"redirected to the home page\""
+    }
+  ],
+  "start": 1714446232655,
+  "stop": 1714446232764
+}

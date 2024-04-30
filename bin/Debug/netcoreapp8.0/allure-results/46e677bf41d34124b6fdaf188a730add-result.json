@@ -1,0 +1,98 @@
+{
+  "uuid": "333c122a868a4612a3e298dba31ba5b5",
+  "historyId": "Failed Login with Locked User",
+  "fullName": "Failed Login with Locked User",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Jahirs-MacBook-Air"
+    },
+    {
+      "name": "feature",
+      "value": "SauceDemo Login Functionality"
+    },
+    {
+      "name": "tag",
+      "value": "Demo-B"
+    }
+  ],
+  "links": [],
+  "name": "Failed Login with Locked User",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on the SauceDemo login page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458483856,
+      "stop": 1714458485422
+    },
+    {
+      "name": "When  I enter Username as \"locked_out_user\" and Password as \"secret_sauce\"",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458485424,
+      "stop": 1714458486110
+    },
+    {
+      "name": "Then  I click on the Login button",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458486110,
+      "stop": 1714458486961
+    },
+    {
+      "name": "Then  I should see an error message indicating the user is locked",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1714458486962,
+      "stop": 1714458487343
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1714458483828,
+  "stop": 1714458487347
+}
