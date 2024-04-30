@@ -13,7 +13,7 @@ Feature: SauceDemo Login Functionality
     Given I am on the SauceDemo login page
     When I enter Username as "locked_out_user" and Password as "secret_sauce"
     Then I click on the Login button
-    Then I should see an error message indicating the user is locked
+    Then I should get an error message indicating the user is locked
 
   @Demo-AB
   Scenario Outline: Login with multiple sets of credentials

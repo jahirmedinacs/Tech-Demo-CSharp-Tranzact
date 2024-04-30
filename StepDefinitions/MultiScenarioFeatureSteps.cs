@@ -65,7 +65,7 @@ namespace TranzactDemo.StepDefinitions
             _inventory.LandingInventory();
         }
 
-        [Then("I should see an error message indicating the user is locked")]
+        [Then(@"^I should get an error message indicating the user is locked$")]
         public void IShouldSeeAnErrorMessageIndicatingTheUserIsLocked()
         {
             string message = "Epic sadface: Sorry, this user has been locked out.";

@@ -27,20 +27,23 @@
     <Compile Remove="StepDefinitions\BaseSteps.cs" />
     <Compile Remove="PageObjects\GooglePage.cs" />
     <Compile Remove="Features\GoogleSearch.feature.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="allure-results\" />
+    <Compile Remove="allure-results\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="specflow.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Remove="allure-results\**" />
   </ItemGroup>
 
   <ItemGroup>
     <SpecFlowFeatureFiles Remove="Features\GoogleSearch.feature" />
+    <SpecFlowFeatureFiles Remove="allure-results\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="allure-results\**" />
   </ItemGroup>
 
 </Project>
