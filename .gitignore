@@ -1,3 +1,7 @@
 *.feature.cs
+/.idea
+/.idea/*
 /bin
+/bin/*
 /obj
+/obj/*
