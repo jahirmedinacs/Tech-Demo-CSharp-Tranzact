@@ -3,7 +3,10 @@ using Allure.NUnit; // Allure is a flexible lightweight multi-language test repo
 using NUnit.Framework; // NUnit is a unit-testing framework for .NET applications
 using OpenQA.Selenium; // Selenium WebDriver is a collection of open-source APIs used to automate the testing of a web application
 using OpenQA.Selenium.Chrome; // ChromeDriver is a standalone server that implements WebDriver's wire protocol for Chromium
-using TechTalk.SpecFlow; // SpecFlow is a tool for defining and executing human-readable acceptance tests for .NET applications
+using TechTalk.SpecFlow;
+using TranzactDemo.Common; // SpecFlow is a tool for defining and executing human-readable acceptance tests for .NET applications
+
+
 
 // Annotate the class with Binding, TestFixture and AllureNUnit attributes
 [Binding, TestFixture, AllureNUnit]
@@ -11,7 +14,7 @@ public class Hooks
 {
     // Declare a private read-only variable of type ScenarioContext (Use to share data between steps)
     private readonly ScenarioContext _scenarioContext;
-
+    private readonly Utilities _util = new Utilities();
     // Define a constructor for the class that takes a ScenarioContext as a parameter
     public Hooks(ScenarioContext scenarioContext)
     {
@@ -26,7 +29,14 @@ public class Hooks
         // Create a new ChromeDriver object and add it to the ScenarioContext with key "WEBDRIVER"
         _scenarioContext["WEBDRIVER"] = new ChromeDriver();
     }
-
+    
+    // [AfterStep]
+    // public void TakeScreenshotAfterStep()
+    // {   
+    //     var driver = _scenarioContext["WEBDRIVER"] as IWebDriver;
+    //     _util.TakeScreenshot(driver);
+    // }
+    
     // Annotate a method with the AfterScenario attribute. This method will be run after each scenario
     [AfterScenario]
     public void AfterScenario()

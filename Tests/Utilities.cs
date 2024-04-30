@@ -1,5 +1,10 @@
 // Importing the System.IO namespace which contains types that allow reading and writing to files and data streams
 using System.IO;
+using Allure.Net.Commons;
+using OpenQA.Selenium;
+
+// using Allure.Commons;
+// using OpenQA.Selenium;
 
 // Defining the namespace for the class. This groups related types into namespaces so that they can be organized and referenced easily
 namespace TranzactDemo.Common
@@ -16,5 +21,16 @@ namespace TranzactDemo.Common
             // So, this method returns a random alphanumeric string of the specified length
             return Path.GetRandomFileName().Replace(".", "").Substring(0, length);
         }
+        
+        public void TakeScreenshot(IWebDriver _driver)
+        {
+            string screenshotName = "tempScreenshot";
+            var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), $"{screenshotName}.png");
+            screenshot.SaveAsFile(path);
+            AllureApi.AddAttachment($"{screenshotName}.png", "image/png", File.ReadAllBytes(path));
+        }
+
+
     }
 }

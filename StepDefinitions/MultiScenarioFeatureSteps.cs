@@ -2,13 +2,13 @@
 using Allure.NUnit; // Used for Allure integration with NUnit for better reporting
 using NUnit.Framework; // NUnit framework for assertions
 using OpenQA.Selenium; // Selenium WebDriver for browser automation
-using System.Collections.Generic; // System class for handling collections
+using System.Collections.Generic; // System.Collections.Generic for List<T> data structure
 using TechTalk.SpecFlow; // SpecFlow for Behavior Driven Development (BDD)
 
 using Assert = NUnit.Framework.Assert; // Creating an alias for NUnit.Framework.Assert as Assert
 
 using TranzactDemo.PageObjects; // Importing Page Objects for the application under test
-using TranzactDemo.Common; // Importing Common utilities that can be used across the application
+using TranzactDemo.Common;
 
 // Defining the namespace for the class
 namespace TranzactDemo.StepDefinitions
@@ -35,7 +35,7 @@ namespace TranzactDemo.StepDefinitions
         // Lists to hold product and cart prices for comparison in tests
         private List<string> _cartPrices = new List<string>();
         private List<string> _productPrices = new List<string>();
-        
+
         // Constructor for the class. It takes ScenarioContext as a parameter and initializes WebDriver and Page Objects
         public MultiScenarioFeatureSteps(ScenarioContext scenarioContext)
         {   
@@ -62,7 +62,6 @@ namespace TranzactDemo.StepDefinitions
         { 
             _login.LoadLoginPage();
         }
-        
         
         // [When("I enter Username as {string} and Password as {string}")]
         [When(@"^I enter Username as \""(.*)\"" and Password as \""(.*)\""$")]
