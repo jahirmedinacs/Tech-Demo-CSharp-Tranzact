@@ -1,23 +1,49 @@
-*.feature.cs
-/.idea
-/.idea/*
-/bin
-/bin/*
-/obj
-/obj/*
-/.vs
-/.vs/*
+/v1*.feature.cs
+/v1/.idea
+/v1/.idea/*
+/v1/bin
+/v1/bin/*
+/v1/obj
+/v1/obj/*
+/v1/.vs
+/v1/.vs/*
+
+/v2*.feature.cs
+/v2/.idea
+/v2/.idea/*
+/v2/bin
+/v2/bin/*
+/v2/obj
+/v2/obj/*
+/v2/.vs
+/v2/.vs/*
 
 # Default ignored files
-/shelf/
-/workspace.xml
+/v1/shelf/
+/v1/workspace.xml
+
+/v2/shelf/
+/v2/workspace.xml
+
 # Rider ignored files
-/projectSettingsUpdater.xml
-/.idea.C-Tech-Demo---Tranzact.iml
-/modules.xml
-/contentModel.xml
+/v1/projectSettingsUpdater.xml
+/v1/.idea.C-Tech-Demo---Tranzact.iml
+/v1/modules.xml
+/v1/contentModel.xml
+
+/v2/projectSettingsUpdater.xml
+/v2/.idea.C-Tech-Demo---Tranzact.iml
+/v2/modules.xml
+/v2/contentModel.xml
+
 # Editor-based HTTP Client requests
-/httpRequests/
+/v1/httpRequests/
+
+/v2/httpRequests/
+
 # Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+/v1/dataSources/
+/v1/dataSources.local.xml
+
+/v2/dataSources/
+/v2/dataSources.local.xml
