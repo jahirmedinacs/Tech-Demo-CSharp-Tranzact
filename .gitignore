@@ -1,4 +1,15 @@
-/v1*.feature.cs
+*.feature.cs
+/.idea
+/.idea/*
+/bin
+/bin/*
+/obj
+/obj/*
+/.vs
+/.vs/*
+
+
+/v1/*.feature.cs
 /v1/.idea
 /v1/.idea/*
 /v1/bin
@@ -8,7 +19,7 @@
 /v1/.vs
 /v1/.vs/*
 
-/v2*.feature.cs
+/v2/*.feature.cs
 /v2/.idea
 /v2/.idea/*
 /v2/bin
