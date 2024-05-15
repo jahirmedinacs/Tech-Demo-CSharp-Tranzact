@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TechDemoCSharpTranzactv2.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TechDemoCSharpTranzactv2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TechDemoCSharpTranzactv2.csproj.user",
+              "DocumentMoniker": "F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj.user",
+              "RelativeDocumentMoniker": "TechDemoCSharpTranzactv2.csproj.user",
+              "ToolTip": "F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj.user",
+              "RelativeToolTip": "TechDemoCSharpTranzactv2.csproj.user",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2024-05-15T19:42:23.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TechDemoCSharpTranzactv2.csproj",
+              "DocumentMoniker": "F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj",
+              "RelativeDocumentMoniker": "TechDemoCSharpTranzactv2.csproj",
+              "ToolTip": "F:\\repos\\Tranzact-TechDemo\\Tech-Demo-CSharp-Tranzact\\v2\\TechDemoCSharpTranzactv2.csproj",
+              "RelativeToolTip": "TechDemoCSharpTranzactv2.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-15T19:42:17.63Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
