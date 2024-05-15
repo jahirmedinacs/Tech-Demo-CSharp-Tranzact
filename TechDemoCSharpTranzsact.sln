@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionV1", "SolutionV1\SolutionV1.csproj", "{4F048968-D161-41FA-96FA-9F3F6F0935BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionV2", "SolutionV2\SolutionV2.csproj", "{50E1C493-3A27-4512-8BC8-92551BAF0689}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{050D2FCD-3406-448D-B3F0-512499149C09}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Challenge.pdf = Challenge.pdf
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F048968-D161-41FA-96FA-9F3F6F0935BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F048968-D161-41FA-96FA-9F3F6F0935BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F048968-D161-41FA-96FA-9F3F6F0935BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F048968-D161-41FA-96FA-9F3F6F0935BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E1C493-3A27-4512-8BC8-92551BAF0689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E1C493-3A27-4512-8BC8-92551BAF0689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E1C493-3A27-4512-8BC8-92551BAF0689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E1C493-3A27-4512-8BC8-92551BAF0689}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5762C9F9-6A7A-43F5-BA7F-4AD72A8324C1}
+	EndGlobalSection
+EndGlobal

@@ -73,6 +73,7 @@ namespace TranzactDemo.StepDefinitions
         }
 
         [Then("I click on the Login button")]
+        [When("I click on the Login button")]
         public void IClickOnTheLoginButton()
         {
             _login.ClickLoginButton();
