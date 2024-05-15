@@ -5,6 +5,8 @@
 /bin/*
 /obj
 /obj/*
+/.vs
+/.vs/*
 
 # Default ignored files
 /shelf/

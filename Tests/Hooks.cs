@@ -14,7 +14,7 @@ public class Hooks
 {
     // Declare a private read-only variable of type ScenarioContext (Use to share data between steps)
     private readonly ScenarioContext _scenarioContext;
-    private readonly Utilities _util = new Utilities();
+    // private readonly Utilities _util = new Utilities();
     // Define a constructor for the class that takes a ScenarioContext as a parameter
     public Hooks(ScenarioContext scenarioContext)
     {
@@ -32,7 +32,7 @@ public class Hooks
     
     // [AfterStep]
     // public void TakeScreenshotAfterStep()
-    // {   
+    // {
     //     var driver = _scenarioContext["WEBDRIVER"] as IWebDriver;
     //     _util.TakeScreenshot(driver);
     // }

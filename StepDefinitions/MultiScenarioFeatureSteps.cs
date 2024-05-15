@@ -2,7 +2,8 @@
 using Allure.NUnit; // Used for Allure integration with NUnit for better reporting
 using NUnit.Framework; // NUnit framework for assertions
 using OpenQA.Selenium; // Selenium WebDriver for browser automation
-using System.Collections.Generic; // System.Collections.Generic for List<T> data structure
+using System.Collections.Generic;
+using Allure.NUnit.Attributes; // System.Collections.Generic for List<T> data structure
 using TechTalk.SpecFlow; // SpecFlow for Behavior Driven Development (BDD)
 
 using Assert = NUnit.Framework.Assert; // Creating an alias for NUnit.Framework.Assert as Assert
@@ -77,11 +78,11 @@ namespace TranzactDemo.StepDefinitions
             _login.ClickLoginButton();
         }
         
-        [Then("I should be redirected to the home page")]
-        public void IShouldBeRedirectedToTheHomePage()
-        {
-            _inventory.LandingInventory();
-        }
+        // [Then("I should be redirected to the home page")]
+        // public void IShouldBeRedirectedToTheHomePage()
+        // {
+        //     _inventory.LandingInventory();
+        // }
 
         [Then(@"^I should get an error message indicating the user is locked$")]
         public void IShouldSeeAnErrorMessageIndicatingTheUserIsLocked()
