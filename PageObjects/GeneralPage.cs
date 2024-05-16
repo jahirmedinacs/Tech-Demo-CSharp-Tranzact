@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace TechDemoCSharpTranzactv2.PageObjects
+﻿namespace TechDemoCSharpTranzactv2.PageObjects
 {
     internal class GeneralPage : BasePage
     {

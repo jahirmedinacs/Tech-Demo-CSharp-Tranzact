@@ -1,4 +1,5 @@
 *.feature.cs
+/*.feature.cs
 /.idea
 /.idea/*
 /bin
@@ -7,7 +8,8 @@
 /obj/*
 /.vs
 /.vs/*
-
+*.user
+/*.user
 
 # Default ignored files
 /shelf/

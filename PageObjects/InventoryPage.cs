@@ -1,8 +1,4 @@
-﻿// Importing necessary namespaces for Selenium WebDriver, NUnit Framework, and System.Collections.Generic
-using OpenQA.Selenium;
-using NUnit.Framework;
-
-namespace TechDemoCSharpTranzactv2.PageObjects
+﻿namespace TechDemoCSharpTranzactv2.PageObjects
 {
     internal class InventoryPage : BasePage
     {

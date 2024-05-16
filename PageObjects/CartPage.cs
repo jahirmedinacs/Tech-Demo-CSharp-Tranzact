@@ -1,8 +1,4 @@
-﻿// Importing necessary namespaces for Selenium WebDriver and NUnit Framework
-using OpenQA.Selenium;
-using NUnit.Framework;
-
-namespace TechDemoCSharpTranzactv2.PageObjects
+﻿namespace TechDemoCSharpTranzactv2.PageObjects
 {
     internal class CartPage : BasePage
     {

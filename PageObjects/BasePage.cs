@@ -1,9 +1,5 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-
-using TechDemoCSharpTranzactv2.Utils;
 
 namespace TechDemoCSharpTranzactv2.PageObjects
 {

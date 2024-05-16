@@ -1,7 +1,4 @@
-using NUnit.Framework;
-using OpenQA.Selenium;
 using TechDemoCSharpTranzactv2.PageObjects;
-using TechDemoCSharpTranzactv2.Utils;
 
 namespace TechDemoCSharpTranzactv2.StepDefinitions
 {

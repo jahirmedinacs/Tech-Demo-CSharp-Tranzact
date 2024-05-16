@@ -1,5 +1,4 @@
 ﻿using Allure.Net.Commons;
-using OpenQA.Selenium;
 using System.Configuration;
 
 namespace TechDemoCSharpTranzactv2.Utils

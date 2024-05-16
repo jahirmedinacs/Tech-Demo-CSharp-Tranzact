@@ -1,10 +1,6 @@
 ﻿// Import necessary namespaces for Selenium WebDriver and browser-specific drivers
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-
-// Import utilities and other necessary namespaces from the project
-using TechDemoCSharpTranzactv2.Utils;
 
 // Namespace declaration for the project
 namespace TechDemoCSharpTranzactv2.Hooks
