@@ -31,10 +31,8 @@ namespace TechDemoCSharpTranzactv2.Hooks
         {  
             // Read the browser type from the configuration file.
             var browserType = _util.ReadConfig("Browser", "ConfigFiles/App.config");
-
             // Declare a variable to hold the WebDriver instance.
             IWebDriver driver;
-
             // Switch statement to initialize the WebDriver based on the browser type specified in the config.
             switch (browserType)
             {
@@ -48,7 +46,6 @@ namespace TechDemoCSharpTranzactv2.Hooks
                     driver = new ChromeDriver();  // Default to ChromeDriver if no valid browser is specified
                     break;
             }
-
             // Store the WebDriver instance in ScenarioContext under the key "WEBDRIVER" for use in other steps.
             _scenarioContext["WEBDRIVER"] = driver;
         }

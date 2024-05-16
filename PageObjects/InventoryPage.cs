@@ -2,12 +2,6 @@
 using OpenQA.Selenium;
 using NUnit.Framework;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace TechDemoCSharpTranzactv2.PageObjects
 {
     internal class InventoryPage : BasePage
@@ -44,12 +38,6 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         }
 
         private string _destinationURL = "https://www.saucedemo.com/inventory.html";
-
-        // Method to verify the landing page URL.
-        public void LandingInventory()
-        {
-            Assert.That(Driver.Url, Is.EqualTo(_destinationURL));
-        }
 
         // Method to add a product to the cart by name. The product name is passed as a parameter. String.Format is used to replace the placeholder in the XPath with the actual product name.
         public void AddProductByNameToCart(string productName)
@@ -108,7 +96,7 @@ namespace TechDemoCSharpTranzactv2.PageObjects
             AssertElementPresent(element);
             string itemProductPage = GetText(element);
             _priceFromProductsOnProductsPage.Add(itemProductPage);
-            System.Console.WriteLine("Price from products on products page: " + _priceFromProductsOnProductsPage);
+            Console.WriteLine("Price from products on products page: " + _priceFromProductsOnProductsPage);
             return _priceFromProductsOnProductsPage;
         }
     }

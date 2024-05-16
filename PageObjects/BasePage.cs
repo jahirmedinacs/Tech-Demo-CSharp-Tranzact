@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
@@ -8,55 +7,54 @@ using TechDemoCSharpTranzactv2.Utils;
 
 namespace TechDemoCSharpTranzactv2.PageObjects
 {
+    // BasePage class provides common functions and utilities for all page objects.
     internal class BasePage
     {
-        // Protected variables for WebDriver and WebDriverWait that can be accessed by child classes
+        // Protected variables allow access from this class and any class that inherits from it.
         protected IWebDriver Driver;
         protected readonly WebDriverWait Wait;
+
+        // Utilities class instance for accessing common utility functions.
         private readonly Utilities _util = new Utilities();
 
-        // Private variable to track the current page
+        // Private variable to track the current page URL or identifier.
         private string _currentPage;
 
-        // Constructor for the class. It takes WebDriver as a parameter and initializes WebDriver and WebDriverWait
+        // Constructor initializes the WebDriver and WebDriverWait.
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
-            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90)); // Set the default wait time to 90 seconds
+            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90)); // Set WebDriverWait to 90 seconds.
         }
 
-        // The rest of the methods in this class are common methods that can be used by any page. 
-        // These methods use the WebDriver instance to interact with the web page and make assertions.
-        // Each method takes a By locator as a parameter, which specifies the web element to interact with.
-        // Some methods also take additional parameters, such as a string for entering text.
-        // WebDriverWait is used to wait for certain conditions before interacting with web elements, 
-        // such as waiting for an element to be visible or clickable.
-        // Some methods return a value, such as a string or a list of strings, or a boolean.
-        // Other methods, such as Click, do not return a value and simply perform an action.
-
+        // ClearText method clears text from a web element specified by the 'element' locator.
         public void ClearText(By element)
         {
             WaitWebElementVisibleBy(element);
             Driver.FindElement(element).Clear();
         }
 
+        // SendText method sends text to a web element specified by the 'element' locator.
         public void SendText(By element, string text)
         {
             WaitWebElementVisibleBy(element);
             Driver.FindElement(element).SendKeys(text);
         }
-        
+
+        // GetText retrieves the text from a web element specified by the 'locator'.
         public string GetText(By locator)
         {
             WaitWebElementVisibleBy(locator);
             return Driver.FindElement(locator).Text;
         }
 
+        // GetTexts retrieves texts from multiple web elements specified by the 'locator'.
         public List<string> GetTexts(By locator)
         {
             return FindElements(locator).Select(e => e.Text).ToList();
         }
 
+        // Click method performs a click action on a web element specified by the 'element' locator.
         public void Click(By element)
         {
             WaitWebElementVisibleBy(element);
@@ -64,47 +62,54 @@ namespace TechDemoCSharpTranzactv2.PageObjects
             Driver.FindElement(element).Click();
         }
 
+        // IsNotDisplayed checks if a web element specified by the 'locator' is not displayed.
         public bool IsNotDisplayed(By locator)
         {
             return Driver.FindElements(locator).Count == 0;
         }
-        
+
+        // FindElements retrieves multiple web elements specified by the 'elements' locator.
         public List<IWebElement> FindElements(By elements)
         {
             WaitWebElementsVisibleBy(elements);
             return Driver.FindElements(elements).ToList();
         }
-        
+
+        // WaitWebElementClickableBy waits until a web element is clickable.
         public void WaitWebElementClickableBy(By element)
         {
             Wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
+        // WaitWebElementVisibleBy waits until a web element is visible.
         public void WaitWebElementVisibleBy(By element)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
         }
 
+        // WaitWebElementsVisibleBy waits until all specified web elements are visible.
         public void WaitWebElementsVisibleBy(By elements)
         {
             Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(elements));
         }
 
+        // AssertElementPresent asserts that a web element is present and visible.
         public void AssertElementPresent(By element)
         {
             WaitWebElementVisibleBy(element);
             Assert.That(Driver.FindElement(element).Displayed, Is.EqualTo(true));
         }
 
+        // WaitForPageToBeLoaded waits until the web page is fully loaded.
         public void WaitForPageToBeLoaded()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             new WebDriverWait(Driver, TimeSpan.FromSeconds(10)).Until(driver =>
                 ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState;").ToString() == "complete");
-
             AutomationSpeed();
         }
 
+        // Sleep methods for pausing the execution for a specified amount of time.
         public void SleepSeconds(int seconds)
         {
             Thread.Sleep(seconds * 1000);
@@ -114,7 +119,8 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         {
             Thread.Sleep((int)millis);
         }
-        
+
+        // AutomationSpeed adjusts the speed of automation based on configuration.
         private void AutomationSpeed() 
         {
             var speed = _util.ReadConfig("AutomationSpeed", "ConfigFiles/App.config");
@@ -135,169 +141,5 @@ namespace TechDemoCSharpTranzactv2.PageObjects
                     break;
             }
         }
-        
-        // public void AssertTextPresentJS(By element, string text)
-        // {
-        //     IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-        //     js.ExecuteScript("arguments[0].scrollIntoView(true);", Driver.FindElement(element));
-        //     Assert.That(Driver.FindElement(element).Text.Contains(text), Is.EqualTo(true));
-        // }
-        //
-        // public bool IsWebElementClickableBy(By element)
-        // {
-        //     try
-        //     {
-        //         Wait.Until(ExpectedConditions.ElementToBeClickable(element));
-        //     }
-        //     catch (WebDriverTimeoutException)
-        //     {
-        //         return false;
-        //     }
-        //     return true;
-        // }
-        //
-        // public void SwitchToNewTab()
-        // {
-        //     _currentPage = Driver.CurrentWindowHandle;
-        //     foreach (string windowHandle in Driver.WindowHandles)
-        //     {
-        //         if (_currentPage != windowHandle)
-        //         {
-        //             Driver.SwitchTo().Window(windowHandle);
-        //             break;
-        //         }
-        //     }
-        // }
-        //
-        // public void SwitchToBaseTab()
-        // {
-        //     Driver.SwitchTo().Window(_currentPage);
-        // }
-        //
-        // public void CloseCurrentTab()
-        // {
-        //     Driver.Close();
-        // }
-        //
-        // public void DragAndDrop(IWebElement from, IWebElement to)
-        // {
-        //     Actions act = new Actions(Driver);
-        //     act.DragAndDrop(from, to).Build().Perform();
-        // }
-        //
-        // public bool IsWebElementDisplayed(By element)
-        // {
-        //     Wait.Until(ExpectedConditions.ElementIsVisible(element));
-        //     return Driver.FindElement(element).Displayed;
-        // }
-        //
-        // public void WaitWebElementInvisible(By element)
-        // {
-        //     WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
-        //     try
-        //     {
-        //         wait.Until(ExpectedConditions.InvisibilityOfElementLocated(element));
-        //     }
-        //     catch (ElementNotInteractableException)
-        //     {
-        //         WaitForPageToBeLoaded();
-        //     }
-        // }
-        //
-        //
-        // public void PressEnter(By element)
-        // {
-        //     WaitWebElementVisibleBy(element);
-        //     Driver.FindElement(element).SendKeys(Keys.Enter);
-        // }
-        //
-        // public IWebElement FindElement(By locator)
-        // {
-        //     WaitWebElementVisibleBy(locator);
-        //     return Driver.FindElement(locator);
-        // }
-        //
-        // public string GetText(IWebElement element)
-        // {
-        //     return element.Text;
-        // }
-        //
-        // public bool IsVisible(By locator)
-        // {
-        //     try
-        //     {
-        //         WaitWebElementVisibleBy(locator);
-        //     }
-        //     catch (WebDriverTimeoutException)
-        //     {
-        //         return false;
-        //     }
-        //     return true;
-        // }
-        //
-        // public void ClickJS(By element)
-        // {
-        //     IWebElement webElement = Driver.FindElement(element);
-        //     IJavaScriptExecutor executor = (IJavaScriptExecutor)Driver;
-        //     executor.ExecuteScript("arguments[0].click();", webElement);
-        // }
-        //
-        // public bool ElementExists(By locator)
-        // {
-        //     return Driver.FindElements(locator).Count > 0;
-        // }
-        //
-        // public void MoveToElement(By locator)
-        // {
-        //     IWebElement element = Driver.FindElement(locator);
-        //     Actions actions = new Actions(Driver);
-        //     actions.MoveToElement(element).Perform();
-        // }
-        //
-        // public void ScrollToElement(By locator)
-        // {
-        //     IWebElement element = Driver.FindElement(locator);
-        //     ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-        //     
-        //     AutomationSpeed();
-        // }
-        //
-        // public void ScrollToElement(IWebElement element)
-        // {
-        //     ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-        //
-        //     AutomationSpeed();
-        // }
-        //
-        // public bool IsDisplayed(By locator)
-        // {
-        //     return !IsNotDisplayed(locator);
-        // }
-        //
-        // public void MouseOver(By element)
-        // {
-        //     WaitWebElementVisibleBy(element);
-        //     Actions builder = new Actions(Driver);
-        //     builder.MoveToElement(Driver.FindElement(element)).Perform();
-        // }
-        //
-        //
-        // public List<IWebElement> FindElementsIfExists(By elements)
-        // {
-        //     try
-        //     {
-        //         WaitWebElementsVisibleBy(elements);
-        //     }
-        //     catch (WebDriverTimeoutException)
-        //     {
-        //         return new List<IWebElement>();
-        //     }
-        //     return Driver.FindElements(elements).ToList();
-        // }
-        //
-        // public void WaitWebElementPresentBy(By element)
-        // {
-        //     Wait.Until(ExpectedConditions.ElementExists(element));
-        // }
     }
 }

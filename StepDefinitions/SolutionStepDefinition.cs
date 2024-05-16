@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using TechDemoCSharpTranzactv2.PageObjects;
@@ -80,7 +79,6 @@ namespace TechDemoCSharpTranzactv2.StepDefinitions
 
             _util.TakeScreenshot(_driver);
         }
-
 
         [Then(@"I should get an error message indicating the user is locked")]
         public void IShouldGetAnErrorMessageIndicatingTheUserIsLocked()

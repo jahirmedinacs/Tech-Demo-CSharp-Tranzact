@@ -1,11 +1,6 @@
 ﻿using Allure.Net.Commons;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TechDemoCSharpTranzactv2.Utils
 {
@@ -22,31 +17,25 @@ namespace TechDemoCSharpTranzactv2.Utils
         }
 
         public string ReadConfig(string key, string filePath)
-        {
-            string configFilePath = @filePath;
-
+        {   
             // Map the path of the config file
+            string configFilePath = @filePath;
             ExeConfigurationFileMap configMap = new ExeConfigurationFileMap();
             configMap.ExeConfigFilename = configFilePath;
-
             // Get the mapped configuration file
             Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
-
             // Read a specific setting from the configuration file
             KeyValueConfigurationCollection settings = config.AppSettings.Settings;
             string mySetting = settings[key]?.Value ?? "Default Value if Not Found";
-
+            // Print the setting to the console and return it
             Console.WriteLine("Setting " + key + ": " + mySetting);
-
-            // If you have custom sections, you can access them like this:
-            // var myCustomSection = (MyCustomSection)config.GetSection("myCustomSection");
             return mySetting;
         }
 
         public string GenerateTimeStamp()
-        {
+        {   
+            // Get the current DateTime
             DateTime now = DateTime.Now;
-
             // Format the DateTime to include milliseconds
             string timestampWithMilliseconds = now.ToString("yyyy-MM-dd_HH-mm-ss_fff");
             return timestampWithMilliseconds;
@@ -54,10 +43,14 @@ namespace TechDemoCSharpTranzactv2.Utils
 
         public void TakeScreenshot(IWebDriver _driver)
         {   
+            // Generate a timestamp to use as the screenshot name
             string screenshotName = GenerateTimeStamp();
+            // Take a screenshot and save it to the specified path, using the _driver object as context
             var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+            // Save the screenshot to a file for later use
             var path = Path.Combine(Directory.GetCurrentDirectory(), $"{screenshotName}.png");
             screenshot.SaveAsFile(path);
+            // Add the screenshot to the Allure report
             AllureApi.AddAttachment($"{screenshotName}.png", "image/png", File.ReadAllBytes(path));
         }
     }
