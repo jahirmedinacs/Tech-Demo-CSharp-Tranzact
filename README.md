@@ -1,6 +1,7 @@
 # Tech Demo C# Tranzac
 
 Report Published Status
+
 [![pages-build-deployment](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment/badge.svg?branch=WebReport&event=deployment)](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment)
 
 ## Introduction
