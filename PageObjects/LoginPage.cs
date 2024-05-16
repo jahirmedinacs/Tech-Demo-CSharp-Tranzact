@@ -27,6 +27,7 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         // Method to navigate to the login page
         public void LoadLoginPage()
         {
+            Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://www.saucedemo.com/");
         }
 

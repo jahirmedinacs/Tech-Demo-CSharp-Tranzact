@@ -1,9 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System.Configuration;
-// using Microsoft.Extensions.Configuration;
+using SysConf = System.Configuration;
 using TechTalk.SpecFlow;
+using System.Reflection;
+using TechDemoCSharpTranzactv2.Utils;
 
 namespace TechDemoCSharpTranzactv2.Hooks
 {
@@ -11,6 +12,7 @@ namespace TechDemoCSharpTranzactv2.Hooks
     public sealed class Hooks
     {
         private readonly ScenarioContext _scenarioContext;
+        private readonly Utilities _util = new Utilities();
 
         public Hooks(ScenarioContext scenarioContext)
         {
@@ -19,10 +21,8 @@ namespace TechDemoCSharpTranzactv2.Hooks
 
         [BeforeScenario]
         public void BeforeScenario()
-        {
-            // Read the browser type from App.config
-            var browserType = ConfigurationManager.AppSettings["Browser"];
-            Console.WriteLine("Browser: " + browserType);
+        {  
+            var browserType = _util.ReadConfig("Browser", "ConfigFiles/App.config");
 
             IWebDriver driver;
 

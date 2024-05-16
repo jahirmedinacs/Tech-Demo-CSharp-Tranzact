@@ -3,12 +3,14 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
+using System.Configuration;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechDemoCSharpTranzactv2.Utils;
 
 namespace TechDemoCSharpTranzactv2.PageObjects
 {
@@ -17,6 +19,7 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         // Protected variables for WebDriver and WebDriverWait that can be accessed by child classes
         protected IWebDriver Driver;
         protected readonly WebDriverWait Wait;
+        private readonly Utilities _util = new Utilities();
 
         // Private variable to track the current page
         private string _currentPage;
@@ -120,13 +123,15 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         {
             IWebElement element = Driver.FindElement(locator);
             ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-            Thread.Sleep(500);
+            
+            AutomationSpeed();
         }
 
         public void ScrollToElement(IWebElement element)
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-            Thread.Sleep(500);
+
+            AutomationSpeed();
         }
 
         public bool IsNotDisplayed(By locator)
@@ -203,15 +208,16 @@ namespace TechDemoCSharpTranzactv2.PageObjects
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             new WebDriverWait(Driver, TimeSpan.FromSeconds(10)).Until(driver =>
                 ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState;").ToString() == "complete");
-            Thread.Sleep(4000);
+
+            AutomationSpeed();
         }
 
-        public void Sleep(int seconds)
+        public void SleepSeconds(int seconds)
         {
             Thread.Sleep(seconds * 1000);
         }
 
-        public void Sleep(long millis)
+        public void SleepMiliseconds(long millis)
         {
             Thread.Sleep((int)millis);
         }
@@ -274,6 +280,26 @@ namespace TechDemoCSharpTranzactv2.PageObjects
             catch (ElementNotInteractableException)
             {
                 WaitForPageToBeLoaded();
+            }
+        }
+
+        private void AutomationSpeed() 
+        {
+            var speed = _util.ReadConfig("AutomationSpeed", "ConfigFiles/App.config");
+            Console.WriteLine("AutomationSpeed: " + speed);
+
+            switch (speed)
+            {
+                case "Slow":
+                    SleepMiliseconds(500);
+                    break;
+                case "Slower":
+                    SleepSeconds(1);
+                    break;
+                case "Normal":
+                    break;
+                default:
+                    break;
             }
         }
     }

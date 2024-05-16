@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,28 @@ namespace TechDemoCSharpTranzactv2.Utils
             // The Substring(0, length) returns the first 'length' characters of the string
             // So, this method returns a random alphanumeric string of the specified length
             return Path.GetRandomFileName().Replace(".", "").Substring(0, length);
+        }
+
+        public string ReadConfig(string key, string filePath)
+        {
+            string configFilePath = @filePath;
+
+            // Map the path of the config file
+            ExeConfigurationFileMap configMap = new ExeConfigurationFileMap();
+            configMap.ExeConfigFilename = configFilePath;
+
+            // Get the mapped configuration file
+            Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
+
+            // Read a specific setting from the configuration file
+            KeyValueConfigurationCollection settings = config.AppSettings.Settings;
+            string mySetting = settings[key]?.Value ?? "Default Value if Not Found";
+
+            Console.WriteLine("Setting " + key + ": " + mySetting);
+
+            // If you have custom sections, you can access them like this:
+            // var myCustomSection = (MyCustomSection)config.GetSection("myCustomSection");
+            return mySetting;
         }
 
         //public void TakeScreenshot(IWebDriver _driver)
