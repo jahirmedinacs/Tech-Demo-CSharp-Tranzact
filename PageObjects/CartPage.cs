@@ -32,6 +32,7 @@
         public void RemoveProductByNameOnCartPage(string productName)
         {
             Click(By.XPath(string.Format(_removeItemByNameFromCart, productName)));
+            
             WaitForPageToBeLoaded();
         }
 

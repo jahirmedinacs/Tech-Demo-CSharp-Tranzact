@@ -44,6 +44,7 @@ This is the BDD Cucumber feature file for the solution
     Then I click on Finish on checkout overview page
     Then I click on menu icon on top left of the header
     Then I click on "Logout" button on the displayed menu
+    Then I validate I had logged out successfully
 
 @Demo-D
   Scenario: Multiple Scenarios Workflow
@@ -55,6 +56,7 @@ This is the BDD Cucumber feature file for the solution
     Then Verify the displayed name on the sort filter is "Price (low to high)"
     Then Verify prices from products are in ascending order
     When I add "Sauce Labs Fleece Jacket" to the cart from the Products page
+    Then I check the Add button is not displayed for product "Sauce Labs Fleece Jacket"
     When I add "Sauce Labs Onesie" to the cart from the Products page
     Then Verify the Remove button is enabled for product "Sauce Labs Fleece Jacket"
     Then Verify the Remove button is enabled for product "Sauce Labs Onesie"
@@ -77,3 +79,4 @@ This is the BDD Cucumber feature file for the solution
     Then Capture message "Thank you for your order!" from checkout complete page
     Then I click on menu icon on top left of the header
     Then I click on "Logout" button on the displayed menu
+    Then I validate I had logged out successfully

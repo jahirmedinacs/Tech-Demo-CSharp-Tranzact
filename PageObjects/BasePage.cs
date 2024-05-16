@@ -82,6 +82,11 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
         }
+        
+        public void WaitWebElementVisibleBy(By element, TimeSpan timeout)
+        {
+            new WebDriverWait(Driver, timeout).Until(ExpectedConditions.ElementIsVisible(element));
+        }
 
         // WaitWebElementsVisibleBy waits until all specified web elements are visible.
         public void WaitWebElementsVisibleBy(By elements)
@@ -94,6 +99,19 @@ namespace TechDemoCSharpTranzactv2.PageObjects
         {
             WaitWebElementVisibleBy(element);
             Assert.That(Driver.FindElement(element).Displayed, Is.EqualTo(true));
+        }
+        
+        public bool AssertElementNotPresent(By element)
+        {
+            try
+            {
+                WaitWebElementVisibleBy(element, new TimeSpan(0, 0, 0, 0, 250));
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return true;
+            }
         }
 
         // WaitForPageToBeLoaded waits until the web page is fully loaded.

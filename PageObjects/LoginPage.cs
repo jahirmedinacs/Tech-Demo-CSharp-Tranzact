@@ -63,5 +63,10 @@
             }
         }
 
+        public void ValidateIHadLoggedOutSuccessfully()
+        {
+            Assert.That(Driver.Url, Is.EqualTo("https://www.saucedemo.com/"));
+        }
+
     }
 }

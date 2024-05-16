@@ -95,5 +95,11 @@
             Console.WriteLine("Price from products on products page: " + _priceFromProductsOnProductsPage);
             return _priceFromProductsOnProductsPage;
         }
+
+        public void VerifyAddButtonIsNotDisplayedForProductByName(string productName)
+        {
+            Assert.That(AssertElementNotPresent(By.XPath(string.Format(_addProductByNameButton, productName))),
+                Is.EqualTo(true));
+    }
     }
 }

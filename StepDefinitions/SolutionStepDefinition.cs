@@ -90,6 +90,14 @@ namespace TechDemoCSharpTranzactv2.StepDefinitions
         public void IAddToTheCartFromTheProductsPage(string productName)
         {
             _inventory.AddProductByNameToCart(productName);
+            
+            _util.TakeScreenshot(_driver);
+        }
+        
+        [Then(@"I check the Add button is not displayed for product ""([^""]*)""")]
+        public void ICheckTheAddButtonIsNotDisplayedForProduct(string productName)
+        {
+            _inventory.VerifyAddButtonIsNotDisplayedForProductByName(productName);
 
             _util.TakeScreenshot(_driver);
         }
@@ -150,6 +158,14 @@ namespace TechDemoCSharpTranzactv2.StepDefinitions
 
             _util.TakeScreenshot(_driver);
         }
+        
+        [Then(@"I validate I had logged out successfully")]
+        public void ThenIValidateIHadLoggedOutSuccessfully()
+        {
+            _login.ValidateIHadLoggedOutSuccessfully();
+
+            _util.TakeScreenshot(_driver);
+        }
 
         [When(@"I change the Product Sort to ""([^""]*)"" on the Products page")]
         public void IChangeTheProductSortToOnTheProductsPage(string sortType)
@@ -180,7 +196,7 @@ namespace TechDemoCSharpTranzactv2.StepDefinitions
         public void VerifyTheRemoveButtonIsEnabledForProduct(string productName)
         {
             _inventory.VerifyTheRemoveButtonIsEnabledForProductByName(productName);
-
+            
             _util.TakeScreenshot(_driver);
         }
 
