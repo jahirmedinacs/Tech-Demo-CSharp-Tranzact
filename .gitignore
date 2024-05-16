@@ -9,52 +9,19 @@
 /.vs/*
 
 
-/SolutionV1/*.feature.cs
-/SolutionV1/.idea
-/SolutionV1/.idea/*
-/SolutionV1/bin
-/SolutionV1/bin/*
-/SolutionV1/obj
-/SolutionV1/obj/*
-/SolutionV1/.vs
-/SolutionV1/.vs/*
-
-/SolutionV2/*.feature.cs
-/SolutionV2/.idea
-/SolutionV2/.idea/*
-/SolutionV2/bin
-/SolutionV2/bin/*
-/SolutionV2/obj
-/SolutionV2/obj/*
-/SolutionV2/.vs
-/SolutionV2/.vs/*
-
 # Default ignored files
-/SolutionV1/shelf/
-/SolutionV1/workspace.xml
-
-/SolutionV2/shelf/
-/SolutionV2/workspace.xml
+/shelf/
+/workspace.xml
 
 # Rider ignored files
-/SolutionV1/projectSettingsUpdater.xml
-/SolutionV1/.idea.C-Tech-Demo---Tranzact.iml
-/SolutionV1/modules.xml
-/SolutionV1/contentModel.xml
-
-/SolutionV2/projectSettingsUpdater.xml
-/SolutionV2/.idea.C-Tech-Demo---Tranzact.iml
-/SolutionV2/modules.xml
-/SolutionV2/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.C-Tech-Demo---Tranzact.iml
+/modules.xml
+/contentModel.xml
 
 # Editor-based HTTP Client requests
-/SolutionV1/httpRequests/
-
-/SolutionV2/httpRequests/
+/httpRequests/
 
 # Datasource local storage ignored files
-/SolutionV1/dataSources/
-/SolutionV1/dataSources.local.xml
-
-/SolutionV2/dataSources/
-/SolutionV2/dataSources.local.xml
+/dataSources/
+/dataSources.local.xml

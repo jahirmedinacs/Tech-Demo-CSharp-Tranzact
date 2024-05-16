@@ -1,5 +1,8 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using System.Configuration;
+// using Microsoft.Extensions.Configuration;
 using TechTalk.SpecFlow;
 
 namespace TechDemoCSharpTranzactv2.Hooks
@@ -7,22 +10,37 @@ namespace TechDemoCSharpTranzactv2.Hooks
     [Binding]
     public sealed class Hooks
     {
-        // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
-
         private readonly ScenarioContext _scenarioContext;
 
         public Hooks(ScenarioContext scenarioContext)
         {
-            // Initialize the _scenarioContext variable with the passed-in scenarioContext
             _scenarioContext = scenarioContext;
         }
 
-        // Annotate a method with the BeforeScenario attribute. This method will be run before each scenario
         [BeforeScenario]
         public void BeforeScenario()
         {
-            // Create a new ChromeDriver object and add it to the ScenarioContext with key "WEBDRIVER"
-            _scenarioContext["WEBDRIVER"] = new ChromeDriver();
+            // Read the browser type from App.config
+            var browserType = ConfigurationManager.AppSettings["Browser"];
+            Console.WriteLine("Browser: " + browserType);
+
+            IWebDriver driver;
+
+            switch (browserType)
+            {
+                case "Firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                case "Chrome":
+                    driver = new ChromeDriver();
+                    break;
+                default:
+                    driver = new ChromeDriver();
+                    break;
+            }
+
+            // Store the driver in ScenarioContext
+            _scenarioContext["WEBDRIVER"] = driver;
         }
 
         // [AfterStep]
@@ -37,11 +55,10 @@ namespace TechDemoCSharpTranzactv2.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            // Retrieve the IWebDriver object from the ScenarioContext and cast it to IWebDriver
-            var driver = _scenarioContext["WEBDRIVER"] as IWebDriver;
-
-            // If the driver object is not null, call the Quit method to close all browser windows and end the WebDriver session
-            driver?.Quit();
+            if (_scenarioContext.TryGetValue("WEBDRIVER", out IWebDriver driver))
+            {
+                driver.Quit();
+            }
         }
     }
 }
