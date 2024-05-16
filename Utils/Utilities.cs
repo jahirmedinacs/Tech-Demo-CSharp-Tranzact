@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Allure.Net.Commons;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -41,13 +43,22 @@ namespace TechDemoCSharpTranzactv2.Utils
             return mySetting;
         }
 
-        //public void TakeScreenshot(IWebDriver _driver)
-        //{
-        //    string screenshotName = "tempScreenshot";
-        //    var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-        //    var path = Path.Combine(Directory.GetCurrentDirectory(), $"{screenshotName}.png");
-        //    screenshot.SaveAsFile(path);
-        //    AllureApi.AddAttachment($"{screenshotName}.png", "image/png", File.ReadAllBytes(path));
-        //}
+        public string GenerateTimeStamp()
+        {
+            DateTime now = DateTime.Now;
+
+            // Format the DateTime to include milliseconds
+            string timestampWithMilliseconds = now.ToString("yyyy-MM-dd_HH-mm-ss_fff");
+            return timestampWithMilliseconds;
+        }
+
+        public void TakeScreenshot(IWebDriver _driver)
+        {   
+            string screenshotName = GenerateTimeStamp();
+            var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), $"{screenshotName}.png");
+            screenshot.SaveAsFile(path);
+            AllureApi.AddAttachment($"{screenshotName}.png", "image/png", File.ReadAllBytes(path));
+        }
     }
 }

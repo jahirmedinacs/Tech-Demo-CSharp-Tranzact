@@ -43,15 +43,7 @@ namespace TechDemoCSharpTranzactv2.Hooks
             _scenarioContext["WEBDRIVER"] = driver;
         }
 
-        // [AfterStep]
-        // public void TakeScreenshotAfterStep()
-        // {
-        //     var driver = _scenarioContext["WEBDRIVER"] as IWebDriver;
-        //     _util.TakeScreenshot(driver);
-        // }
-
         // Annotate a method with the AfterScenario attribute. This method will be run after each scenario
-
         [AfterScenario]
         public void AfterScenario()
         {
