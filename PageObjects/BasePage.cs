@@ -127,7 +127,7 @@ namespace TechDemoCSharpTranzactv2.PageObjects
                 case "Slow":
                     SleepMiliseconds(500);
                     break;
-                case "Slower":
+                case "Slowest":
                     SleepSeconds(1);
                     break;
                 case "Normal":

@@ -41,5 +41,17 @@ then you can run the following command:
 allure serve bin/Debug/net6.0/allure-results
 ```
 
+## App.config available Parameters
+
+- Browser: The browser to use for the tests
+  - `Chrome`
+  - `Firefox`
+- AutomationSpeed: The speed of the automation
+  - `Normal`
+  - `Slow`
+  - `Slowest`
+- BrowserMode: The mode of the browser
+  - `Normal`
+  - `Headless`
 
 

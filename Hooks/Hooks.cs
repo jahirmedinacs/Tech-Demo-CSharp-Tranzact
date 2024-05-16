@@ -20,30 +20,98 @@ namespace TechDemoCSharpTranzactv2.Hooks
         {
             _scenarioContext = scenarioContext;
         }
-
+        
+        // Method to initialize the WebDriver based on the browser mode specified in the configuration file.
+        private IWebDriver DriverMode(string browserName)
+        {   
+            // Declare a variable to hold the WebDriver instance.
+            IWebDriver driver;
+            
+            // Read the browser mode from the configuration file.
+            var browserMode = _util.ReadConfig("BrowserMode", "ConfigFiles/App.config");
+            
+            if (browserName.Equals("Chrome"))
+            {
+                switch (browserMode)
+                {
+                    case "Headless":
+                        ChromeOptions options = new ChromeOptions();
+                        options.AddArgument("--headless");
+                        driver = new ChromeDriver(options);
+                        break;
+                    case "Normal":
+                        driver = new ChromeDriver();
+                        break;
+                    default:
+                        driver = new ChromeDriver();
+                        break;
+                }
+            }
+            else if (browserName.Equals("Firefox"))
+            {
+                switch (browserMode)
+                {   
+                    case "Headless":
+                        FirefoxOptions options = new FirefoxOptions();
+                        options.AddArgument("--headless");
+                        driver = new FirefoxDriver(options);
+                        break;
+                    case "Normal":
+                        driver = new FirefoxDriver();
+                        break;
+                    default:
+                        driver = new FirefoxDriver();
+                        break;
+                }
+            }
+            else
+            {
+                switch (browserMode)
+                {
+                    case "Headless":
+                        ChromeOptions options = new ChromeOptions();
+                        options.AddArgument("--headless");
+                        driver = new ChromeDriver(options);
+                        break;
+                    case "Normal":
+                        driver = new ChromeDriver();
+                        break;
+                    default:
+                        driver = new ChromeDriver();
+                        break;
+                }
+            }
+            
+            return driver;
+        }
+        
         // BeforeScenario is a hook that runs before each scenario is executed.
         [BeforeScenario]
         public void BeforeScenario()
         {  
             // Read the browser type from the configuration file.
             var browserType = _util.ReadConfig("Browser", "ConfigFiles/App.config");
+            
             // Declare a variable to hold the WebDriver instance.
             IWebDriver driver;
+            
             // Switch statement to initialize the WebDriver based on the browser type specified in the config.
             switch (browserType)
             {
                 case "Firefox":
-                    driver = new FirefoxDriver();  // Creates a new instance of FirefoxDriver
+                    driver = DriverMode(browserType);
                     break;
                 case "Chrome":
-                    driver = new ChromeDriver();  // Creates a new instance of ChromeDriver
+                    driver = DriverMode(browserType);
                     break;
                 default:
-                    driver = new ChromeDriver();  // Default to ChromeDriver if no valid browser is specified
+                    driver = DriverMode("");
                     break;
             }
+            
             // Store the WebDriver instance in ScenarioContext under the key "WEBDRIVER" for use in other steps.
             _scenarioContext["WEBDRIVER"] = driver;
+            
         }
 
         // AfterScenario is a hook that runs after each scenario is executed.
