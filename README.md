@@ -1,6 +1,6 @@
 # Tech Demo C# Tranzac
 
-[![pages-build-deployment](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment/badge.svg?branch=WebReport&event=deployment)](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment/badge.svg?branch=WebReport)](https://github.com/jahirmedinacs/Tech-Demo-CSharp-Tranzact/actions/workflows/pages/pages-build-deployment)
 
 [See the Web Report of the Demo here](https://ghp.jahirmedina.com/Tech-Demo-CSharp-Tranzact/ "See the Web Report of the Demo here")
 
