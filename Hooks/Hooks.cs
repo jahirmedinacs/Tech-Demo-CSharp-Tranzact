@@ -37,6 +37,7 @@ namespace TechDemoCSharpTranzactv2.Hooks
                     case "Headless":
                         ChromeOptions options = new ChromeOptions();
                         options.AddArgument("--headless");
+                        options.AddArgument("--window-size=1920,1080");
                         driver = new ChromeDriver(options);
                         break;
                     case "Normal":
@@ -54,6 +55,7 @@ namespace TechDemoCSharpTranzactv2.Hooks
                     case "Headless":
                         FirefoxOptions options = new FirefoxOptions();
                         options.AddArgument("--headless");
+                        options.AddArgument("--window-size=1920,1080");
                         driver = new FirefoxDriver(options);
                         break;
                     case "Normal":
